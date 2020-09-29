@@ -1,2 +1,3 @@
 # GeneralCXXTemplate
-An all encompassing C++ template file structure for my needs. Allows the addition of Libraries, and Google tests as well as Boost
+An all encompassing C++ Project template file structure for my needs. It allows the addition of 
+Libraries, Google Test as well as Boost with CMake and CPack
