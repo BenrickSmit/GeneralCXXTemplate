@@ -1,5 +1,5 @@
 ##------------------------------------------------------------------------------
-## SECTION:
+## SECTION: Set Variables
 ##------------------------------------------------------------------------------
 ## Set some settings for the builder
 set(BOOL_CREATE_TESTS ON)
@@ -37,3 +37,8 @@ if(${BOOL_CREATE_TESTS})
     ## Add the Unit Tests
     add_subdirectory(tests)
 endif()
+
+##-----------------------------------------------------------------------------=
+## SECTION: Create Bin directory
+##------------------------------------------------------------------------------
+file(MAKE_DIRECTORY bin)
