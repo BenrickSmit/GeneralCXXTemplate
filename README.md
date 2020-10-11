@@ -12,7 +12,11 @@ run_all.sh is used to run all tests and program execution, as well as to create 
 run_application.sh is used to run only the application
 run_tests.sh is used to run only the tests
 
-Find the project [here](github.com/BenrickSmit/GeneralCXXTemplate]), if you did not find this project on my github.
+build_info contains the build_name, build_version, and build_cxx_standard text files.
+build_name contains the project name. build_version contains the project version number. build_cxx_standard contains
+the CXX standard used, it's default is 11
+
+Find the project [here](github.com/BenrickSmit/GeneralCXXTemplate), if you did not find this project on my github.
 
 # Features
 This states the current features provided by the program
