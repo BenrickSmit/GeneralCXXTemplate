@@ -16,12 +16,12 @@ build_info contains the build_name, build_version, and build_cxx_standard text f
 build_name contains the project name. build_version contains the project version number. build_cxx_standard contains
 the CXX standard used, it's default is 11
 
-Find the project [here](github.com/BenrickSmit/GeneralCXXTemplate), if you did not find this project on my github.
+Find the project [here](https://github.com/BenrickSmit/GeneralCXXTemplate), if you did not find this project on my github.
 
 # Features
 This states the current features provided by the program
 
-# Future Enchancements
+# Future Changes
 This gives information on the future changes that are likely to be implemented.
 
 # How to Run
