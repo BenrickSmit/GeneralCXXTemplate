@@ -19,3 +19,4 @@ target_link_libraries(${TEST_PROJECT_NAME} PUBLIC gtest gtest_main ${THREAD_USED
 
 ## Required to add individual tests
 #add_test(GOOGLE_TEST_ALIVE_TEST ${TEST_PROJECT_NAME})
+

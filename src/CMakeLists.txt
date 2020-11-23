@@ -4,6 +4,7 @@
 set(BOOL_CREATE_INSTALLER OFF)
 set(BOOL_CREATE_EXECUTABLE ON)
 set(BOOL_CREATE_LIBRARY ON)
+set(BOOL_PROFILE_CODE OFF)
 set(BOOL_USE_BOOST OFF)
 
 ## Read the required C++ version
@@ -15,6 +16,16 @@ file(GLOB_RECURSE EXEC_FILE_SOURCES LIST_DIRECTORIES false *.h *.cpp)
 ## Set the required C++ Standard
 set(CMAKE_CXX_STANDARD ${STRING_REQUIRED_CXX_STANDARD})
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+## Enable gprof profiling of code
+if(${BOOL_PROFILE_CODE})
+    #set(DCMAKE_CXX_FLAGS "${DCMAKE_CXX_FLAGS} -pg")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
+    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -pg")
+endif()
+
+
 
 ##------------------------------------------------------------------------------
 ## SECTION: Create an executable

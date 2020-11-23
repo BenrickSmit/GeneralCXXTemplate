@@ -5,10 +5,10 @@
 ## after which it will execute it.
 
 ## Read the filename from the chosen location
-source_filename="${PWD}/build_info/build_name.txt"
-exec_filename=(`cat $source_filename`)
-exec_filename=${exec_filename}
+SOURCE_FILENAME="${PWD}/build_info/build_name.txt"
+EXEC_FILENAME=(`cat $SOURCE_FILENAME`)
+EXEC_FILENAME=${EXEC_FILENAME}
 
 ## Change directory to execute the file
 cd build/src
-./${exec_filename}
+./${EXEC_FILENAME}

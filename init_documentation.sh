@@ -161,9 +161,9 @@ create_doxygen_documentation() {
 	print_color ""
 	print_color "-----------------ADDITIONAL-DOXYGEN-COMMANDS------------------" "YELLOW"
 	print_color "Addtional commands to help documentation: " "YELLOW"
-	print_color "To define a ToDo tasks, put \"\todo\" in a comment" "YELLOW"
-	print_color "To define a test, put \"\test\" in a comment" "YELLOW"
-	print_color "To define a bug, put \"\bug\" in a comment" "YELLOW"
+	print_color "To define a ToDo tasks, put \'\ todo\'(NO space) in a comment" "YELLOW"
+	print_color "To define a test, put \'\ test\'(NO space) in a comment" "YELLOW"
+	print_color "To define a bug, put \'\ bug\'(NO space) in a comment" "YELLOW"
 	print_color "To define something as deprecated, put \"\deprecated\" in a comment" "YELLOW"
 	print_color "--------------------------------------------------------------" "YELLOW"
 }
