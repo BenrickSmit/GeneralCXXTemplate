@@ -25,7 +25,9 @@ if(${BOOL_PROFILE_CODE})
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -pg")
 endif()
 
-
+## Ensure the use of pthreads for the library
+set(THREADS_PREFER_PTHREADS_FLAG ON)
+#find_package(Threads REQUIRED)
 
 ##------------------------------------------------------------------------------
 ## SECTION: Create an executable
@@ -33,6 +35,8 @@ endif()
 if(${BOOL_CREATE_EXECUTABLE})
     ## Create the required executable
     add_executable(${PROJECT_NAME} ${EXEC_FILE_SOURCES})
+    ## Allow for threads
+    #target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
     
     ## If the file is successfully created, move it to bin and create a dir
     ## for the current <compiler>_<OS>_<version>
@@ -59,7 +63,9 @@ endif()
 if(${BOOL_CREATE_LIBRARY})
     ## Create the required library
     add_library(${PROJECT_NAME}_lib STATIC ${EXEC_FILE_SOURCES})
-    
+    ## Allow for threads
+    #target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
+
     ## If the file is successfully created, move it to bin and create a dir
     ## for the current lib_<compiler>_<OS>_<version>
     set(LIB_LOCATION ${CMAKE_SOURCE_DIR}/build/src/${PROJECT_NAME}_lib)
