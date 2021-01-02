@@ -6,6 +6,7 @@ set(BOOL_CREATE_EXECUTABLE ON)
 set(BOOL_CREATE_LIBRARY ON)
 set(BOOL_PROFILE_CODE OFF)
 set(BOOL_USE_BOOST OFF)
+set(BOOL_32_BIT_COMPILATION ON)
 
 ## Read the required C++ version
 file(STRINGS "../build_info/build_cxx_standard.txt" STRING_REQUIRED_CXX_STANDARD)
@@ -35,6 +36,12 @@ set(THREADS_PREFER_PTHREADS_FLAG ON)
 if(${BOOL_CREATE_EXECUTABLE})
     ## Create the required executable
     add_executable(${PROJECT_NAME} ${EXEC_FILE_SOURCES})
+    ## ALlow for 32-bit compilation
+    if(BOOL_32_BIT_COMPILATION)
+        if(!UNIX)
+            set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_OPTIONS "-m32" LINK_OPTIONS "-m32")
+        endif()
+    endif()
     ## Allow for threads
     #target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
     
@@ -63,6 +70,12 @@ endif()
 if(${BOOL_CREATE_LIBRARY})
     ## Create the required library
     add_library(${PROJECT_NAME}_lib STATIC ${EXEC_FILE_SOURCES})
+    ## ALlow for 32-bit compilation
+    if(BOOL_32_BIT_COMPILATION)
+        if(!UNIX)
+            set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_OPTIONS "-m32" LINK_OPTIONS "-m32")
+        endif()
+    endif()
     ## Allow for threads
     #target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
 
