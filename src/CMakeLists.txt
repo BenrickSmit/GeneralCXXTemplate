@@ -42,6 +42,15 @@ if(${BOOL_CREATE_EXECUTABLE})
             set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_OPTIONS "-m32" LINK_OPTIONS "-m32")
         endif()
     endif()
+    ## Allow for Release and Debug Versions
+    if(${BOOL_RELEASE_VERSION})
+        set_target_properties(${PROJECT_NAME} PROPERTIES RELEASE_POSTFIX "${CMAKE_RELEASE_POSTFIX}")
+        message(">> BUILD_TYPE: RELEASE")
+    else()
+        set_target_properties(${PROJECT_NAME} PROPERTIES DEBUG_POSTFIX "${CMAKE_DEBUG_POSTFIX}")
+        message(">> BUILD_TYPE: DEBUG")
+    endif()
+    
     ## Allow for threads
     #target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
     
